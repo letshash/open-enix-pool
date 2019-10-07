@@ -5,13 +5,13 @@
 
 	"proxy": {
 		"enabled": true,
-		"listen": "68.183.140.150:8888",
+		"listen": "0.0.0.0:8809",
 		"limitHeadersSize": 1024,
 		"limitBodySize": 256,
 		"behindReverseProxy": false,
 		"blockRefreshInterval": "120ms",
 		"stateUpdateInterval": "3s",
-		"difficulty": 5000000000,
+		"difficulty": 9000000000,
 		"hashrateExpiration": "3h",
 
 		"healthCheck": true,
@@ -19,7 +19,7 @@
 
 		"stratum": {
 			"enabled": true,
-			"listen": "68.183.140.150:8008",
+			"listen": "0.0.0.0:8009",
 			"timeout": "120s",
 			"maxConn": 8192
 		},
@@ -83,7 +83,7 @@
 	"unlocker": {
 		"enabled": false,
 		"poolFee": 0.0,
-		"poolFeeAddress": "0x11e97426848f4e00736cf86bbf6dab8a36ce9b82",
+		"poolFeeAddress": "0xfed15e84337d37915f8ae82c98c60a35b5b685dd",
 		"donate": true,
 		"depth": 120,
 		"immatureDepth": 20,
@@ -99,7 +99,7 @@
 		"interval": "120m",
 		"daemon": "http://127.0.0.1:8545",
 		"timeout": "10s",
-		"address": "0x11e97426848f4e00736cf86bbf6dab8a36ce9b82",
+		"address": "0xfed15e84337d37915f8ae82c98c60a35b5b685dd",
 		"gas": "21000",
 		"gasPrice": "50000000000",
 		"autoGas": true,
