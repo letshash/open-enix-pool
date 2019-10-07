@@ -12,7 +12,7 @@ $.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", funct
 
   var usdvalue = (Payment * price).toFixed(2);
 
-  $(".enixusd").html(final);
+  $(".enixusd").html(usdvalue);
 });
 
 export default Payment;
