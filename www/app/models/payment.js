@@ -18,9 +18,9 @@ Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true",
 
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = `${data.market_data.current_price.usd}`;
-  console.log(price + "Price From CoinGecko");
+  console.log(price + " Price From CoinGecko");
 
-  var price2 = price.toFixed(3);
+  var price2 = parseFloat(price).toFixed(3);
   console.log(price2 + "Rouded Price to 3 Decimals")
 
   var price3 = '$ ' + price2 + ' Per Enix'
