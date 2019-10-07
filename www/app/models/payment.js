@@ -17,8 +17,11 @@ Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true",
 });
 
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
-  var price = `${data.market_data.current_price.usd}`;
-  console.log(price);
+  var price2 = `${data.market_data.current_price.usd}`;
+  console.log(price2);
+
+  var price = '$ ' + price2 + ' Per Enix'
+  console.log(price)
 
   $(".enixus").html(price);
 });
