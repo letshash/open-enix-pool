@@ -26,7 +26,7 @@ module.exports = function(environment) {
 
       // Fee and payout details
       PoolFee: '1%',
-      PayoutThreshold: '1 XERO',
+      PayoutThreshold: '10 ENIX',
 
       // For network hashrate (change for your favourite fork)
       BlockTime: 13
