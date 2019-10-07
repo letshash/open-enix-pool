@@ -7,7 +7,7 @@ var Payment = Ember.Object.extend({
   })
 });
 
-ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
+Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = `${data.market_data.current_price.usd}`;
 
   var usdvalue = (Payment * price).toFixed(2);
@@ -15,7 +15,7 @@ ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true",
   $(".enixusd").html(usdvalue);
 });
 
-ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
+Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = (`${data.market_data.current_price.usd}`).toFixed(2);
 
   $(".enixus").html(price);
