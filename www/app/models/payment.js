@@ -10,20 +10,23 @@ var Payment = Ember.Object.extend({
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = `${data.market_data.current_price.usd}`;
 
-  var usdvalue = (Payment * price).toFixed(2);
-  console.log(usdvalue);
+  var usd = Payment * price;
+  console.log(usd + "Value Mined");
 
-  $(".enixusd").html(usdvalue);
+  $(".enixusd").html(usd);
 });
 
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
-  var price2 = `${data.market_data.current_price.usd}`;
-  console.log(price2);
+  var price = `${data.market_data.current_price.usd}`;
+  console.log(price + "Price From CoinGecko");
 
-  var price = '$ ' + price2.toFixed(3) + ' Per Enix'
-  console.log(price)
+  var price2 = price.toFixed(3);
+  console.log(price2 + "Rouded Price to 3 Decimals")
 
-  $(".enixus").html(price);
+  var price3 = '$ ' + price2 + ' Per Enix'
+  console.log(price3)
+
+  $(".enixus").html(price3);
 });
 
 export default Payment;
