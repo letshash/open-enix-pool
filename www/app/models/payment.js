@@ -10,7 +10,7 @@ var Payment = Ember.Object.extend({
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = `${data.market_data.current_price.usd}`;
 
-  var usd = 2 * price;
+  var usd = Payment * price;
   console.log(usd + " Value Mined");
 
   $(".enixusd").html(usd);
