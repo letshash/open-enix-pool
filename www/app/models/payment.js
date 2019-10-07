@@ -11,12 +11,14 @@ Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true",
   var price = `${data.market_data.current_price.usd}`;
 
   var usdvalue = (Payment * price).toFixed(2);
+  console.log(usdvalue);
 
   $(".enixusd").html(usdvalue);
 });
 
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = `${data.market_data.current_price.usd}`;
+  console.log(price);
 
   $(".enixus").html(price);
 });
