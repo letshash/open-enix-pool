@@ -5,21 +5,21 @@
 
 	"proxy": {
 		"enabled": false,
-		"listen": "0.0.0.0:8888",
+		"listen": "0.0.0.0:8892",
 		"limitHeadersSize": 1024,
 		"limitBodySize": 256,
 		"behindReverseProxy": false,
 		"blockRefreshInterval": "120ms",
 		"stateUpdateInterval": "3s",
-		"difficulty": 2000000000,
+		"difficulty": 10000000000,
 		"hashrateExpiration": "3h",
 
-		"healthCheck": false,
+		"healthCheck": true,
 		"maxFails": 100,
 
 		"stratum": {
-			"enabled": true,
-			"listen": "0.0.0.0:8008",
+			"enabled": false,
+			"listen": "0.0.0.0:8012",
 			"timeout": "120s",
 			"maxConn": 8192
 		},
@@ -52,8 +52,8 @@
 		"purgeInterval": "10m",
 		"listen": "0.0.0.0:8080",
 		"statsCollectInterval": "5s",
-		"hashrateWindow": "30m",
-		"hashrateLargeWindow": "3h",
+		"hashrateWindow": "3m",
+		"hashrateLargeWindow": "1h",
 		"luckWindow": [64, 128, 256],
 		"payments": 30,
 		"blocks": 50
@@ -81,11 +81,11 @@
 	},
 
 	"unlocker": {
-		"enabled": true,
-		"poolFee": 1,
+		"enabled": false,
+		"poolFee": 0.5,
 		"poolFeeAddress": "0xfed15e84337d37915f8ae82c98c60a35b5b685dd",
 		"donate": true,
-		"depth": 32,
+		"depth": 120,
 		"immatureDepth": 20,
 		"keepTxFees": false,
 		"interval": "10m",
@@ -94,16 +94,16 @@
 	},
 
 	"payouts": {
-		"enabled": false,
+		"enabled": true,
 		"requirePeers": 2,
-		"interval": "10m",
+		"interval": "60m",
 		"daemon": "http://127.0.0.1:8545",
 		"timeout": "10s",
 		"address": "0xfed15e84337d37915f8ae82c98c60a35b5b685dd",
 		"gas": "21000",
-		"gasPrice": "20000000000",
-		"autoGas": true,
-		"threshold": 500000000,
+		"gasPrice": "1",
+		"autoGas": false,
+		"threshold": 10000000000,
 		"bgsave": false
 	},
 
