@@ -26,7 +26,7 @@ var Block = Ember.Object.extend({
 				var usd = value * price;
 				console.log(usd + " Reward Value in USD");
 
-				$(".enixusdr").html(usd1);
+				$(".enixusdr").html(usd);
 			});
 			return value.toFixed(6);
 		} else {
