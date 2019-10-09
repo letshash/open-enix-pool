@@ -20,20 +20,19 @@ var Block = Ember.Object.extend({
 	formatReward: Ember.computed('reward', function() {
 		if (!this.get('orphan')) {
 			var value = parseInt(this.get('reward')) * 0.000000000000000001;
+			Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
+				var price = `${data.market_data.current_price.usd}`;
+
+				var usd = value * price;
+				console.log(usd + " Reward Value in USD");
+
+				$(".enixusdr").html(usd1);
+			});
 			return value.toFixed(6);
 		} else {
 		  return 0;
 		}
 	})
-});
-
-Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
-	var price = `${data.market_data.current_price.usd}`;
-
-	var usd = reward * price;
-	console.log(usd + " Reward Value in USD");
-
-	$(".enixusdr").html(usd1);
 });
 
 export default Block;
