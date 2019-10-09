@@ -251,7 +251,7 @@ func handleUncle(height int64, uncle *rpc.GetBlockReply, candidate *storage.Bloc
 func (u *BlockUnlocker) unlockPendingBlocks() {
 	if u.halt {
 		log.Println("Unlocking suspended due to last critical error:", u.lastFail)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 
@@ -260,7 +260,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Unable to get current blockchain height from node: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 	currentHeight, err := strconv.ParseInt(strings.Replace(current.Number, "0x", "", -1), 16, 64)
@@ -268,7 +268,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Can't parse pending block number: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 
@@ -277,7 +277,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Failed to get block candidates from backend: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 
@@ -291,7 +291,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Failed to unlock blocks: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 	log.Printf("Immature %v blocks, %v uncles, %v orphans", result.blocks, result.uncles, result.orphans)
@@ -301,7 +301,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Failed to insert orphaned blocks into backend: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	} else {
 		log.Printf("Inserted %v orphaned blocks to backend", result.orphans)
@@ -317,7 +317,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 			u.halt = true
 			u.lastFail = err
 			log.Printf("Failed to calculate rewards for round %v: %v", block.RoundKey(), err)
-			os.Exit(1)
+			//os.Exit(1)
 			return
 		}
 		err = u.backend.WriteImmatureBlock(block, roundRewards)
@@ -325,7 +325,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 			u.halt = true
 			u.lastFail = err
 			log.Printf("Failed to credit rewards for round %v: %v", block.RoundKey(), err)
-			os.Exit(1)
+			//os.Exit(1)
 			return
 		}
 		totalRevenue.Add(totalRevenue, revenue)
@@ -357,7 +357,7 @@ func (u *BlockUnlocker) unlockPendingBlocks() {
 func (u *BlockUnlocker) unlockAndCreditMiners() {
 	if u.halt {
 		log.Println("Unlocking suspended due to last critical error:", u.lastFail)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 
@@ -366,7 +366,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Unable to get current blockchain height from node: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 	currentHeight, err := strconv.ParseInt(strings.Replace(current.Number, "0x", "", -1), 16, 64)
@@ -374,7 +374,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Can't parse pending block number: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 
@@ -383,7 +383,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Failed to get block candidates from backend: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 
@@ -397,7 +397,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		u.halt = true
 		u.lastFail = err
 		log.Printf("Failed to unlock blocks: %v", err)
-		os.Exit(1)
+		//os.Exit(1)
 		return
 	}
 	log.Printf("Unlocked %v blocks, %v uncles, %v orphans", result.blocks, result.uncles, result.orphans)
@@ -408,7 +408,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 			u.halt = true
 			u.lastFail = err
 			log.Printf("Failed to insert orphaned block into backend: %v", err)
-			os.Exit(1)
+			//os.Exit(1)
 			return
 		}
 	}
@@ -424,7 +424,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 			u.halt = true
 			u.lastFail = err
 			log.Printf("Failed to calculate rewards for round %v: %v", block.RoundKey(), err)
-			os.Exit(1)
+			//os.Exit(1)
 			return
 		}
 		err = u.backend.WriteMaturedBlock(block, roundRewards)
@@ -432,7 +432,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 			u.halt = true
 			u.lastFail = err
 			log.Printf("Failed to credit rewards for round %v: %v", block.RoundKey(), err)
-			os.Exit(1)
+			//os.Exit(1)
 			return
 		}
 		totalRevenue.Add(totalRevenue, revenue)
@@ -451,7 +451,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 			entries = append(entries, fmt.Sprintf("\tREWARD %v: %v: %v Shannon", block.RoundKey(), login, reward))
 		}
 		log.Println(strings.Join(entries, "\n"))
-		os.Exit(1)
+		//os.Exit(1)
 	}
 
 	log.Printf(
@@ -460,7 +460,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		util.FormatRatReward(totalMinersProfit),
 		util.FormatRatReward(totalPoolProfit),
 	)
-	os.Exit(1)
+	//os.Exit(1)
 }
 
 func (u *BlockUnlocker) calculateRewards(block *storage.BlockData) (*big.Rat, *big.Rat, *big.Rat, map[string]int64, error) {
