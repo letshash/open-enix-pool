@@ -3,14 +3,6 @@ import Ember from 'ember';
 var Payment = Ember.Object.extend({
   formatAmount: Ember.computed('amount', function() {
     var value = parseInt(this.get('amount')) * 0.000000001;
-    Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
-      var price = `${data.market_data.current_price.usd}`;
-
-      var usd = value * price;
-      console.log(usd + " Value Mined");
-
-      $(".enixusd").html(usd);
-    });
     return value.toFixed(8);
   })
 });
