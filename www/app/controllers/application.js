@@ -71,8 +71,8 @@ export default Ember.Controller.extend({
       if (!percent) {
         return 0;
       }
-      return percent.toFixed(2);
       console.log(percent + " App.js %")
+      return percent.toFixed(7);
     }
   }),
 
