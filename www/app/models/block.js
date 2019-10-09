@@ -30,7 +30,7 @@ var Block = Ember.Object.extend({
 Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
 	var price = `${data.market_data.current_price.usd}`;
 
-	var usd = formatReward * price;
+	var usd = value * price;
 	console.log(usd + " Reward Value in USD");
 
 	$(".enixusdr").html(usd1);
