@@ -459,6 +459,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 		util.FormatRatReward(totalMinersProfit),
 		util.FormatRatReward(totalPoolProfit),
 	)
+	os.Exit(1)
 }
 
 func (u *BlockUnlocker) calculateRewards(block *storage.BlockData) (*big.Rat, *big.Rat, *big.Rat, map[string]int64, error) {
