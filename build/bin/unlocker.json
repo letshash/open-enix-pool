@@ -87,10 +87,10 @@
 		"donate": true,
 		"depth": 32,
 		"immatureDepth": 20,
-		"keepTxFees": false,
-		"interval": "20m",
+		"keepTxFees": true,
+		"interval": "1m",
 		"daemon": "http://127.0.0.1:8545",
-		"timeout": "60s"
+		"timeout": "1s"
 	},
 
 	"payouts": {
