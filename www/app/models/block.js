@@ -24,9 +24,12 @@ var Block = Ember.Object.extend({
 				var price = `${data.market_data.current_price.usd}`;
 
 				var usd = value * price;
-				console.log(usd + " Reward Value in USD");
+				var rounding = parseFloat(usd).toFixed(3);
+				var final = "$" + rounding + "USD";
 
-				$(".enixusdr").html(usd);
+				console.log(final + " Reward Value in USD");
+
+				$(".enixusdr").html(final);
 			});
 			return value.toFixed(6);
 		} else {
