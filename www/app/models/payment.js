@@ -7,7 +7,7 @@ var Payment = Ember.Object.extend({
   })
 });
 
-/*Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
+Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
   var price = `${data.market_data.current_price.usd}`;
   console.log(price + " Price From CoinGecko");
 
@@ -18,6 +18,6 @@ var Payment = Ember.Object.extend({
   console.log(price3)
 
   $(".enixus").html(price3);
-});*/
+});
 
 export default Payment;
