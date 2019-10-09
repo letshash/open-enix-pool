@@ -20,7 +20,7 @@ var Block = Ember.Object.extend({
 	formatReward: Ember.computed('reward', function() {
 		if (!this.get('orphan')) {
 			var value = parseInt(this.get('reward')) * 0.000000000000000001;
-			Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
+			/*Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
 				var price = `${data.market_data.current_price.usd}`;
 
 				var usd = value * price;
@@ -30,7 +30,7 @@ var Block = Ember.Object.extend({
 				console.log(final + " Reward Value in USD");
 
 				$(".enixusdr").html(final);
-			});
+			});*/
 			return value.toFixed(6);
 		} else {
 		  return 0;
