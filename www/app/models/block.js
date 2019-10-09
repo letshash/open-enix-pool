@@ -7,6 +7,7 @@ var Block = Ember.Object.extend({
 			return 0;
 		}
 		return percent;
+		console.log(percent + " Variance %")
 	}),
 
 	isLucky: Ember.computed('variance', function() {
