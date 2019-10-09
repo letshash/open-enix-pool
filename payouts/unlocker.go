@@ -451,6 +451,7 @@ func (u *BlockUnlocker) unlockAndCreditMiners() {
 			entries = append(entries, fmt.Sprintf("\tREWARD %v: %v: %v Shannon", block.RoundKey(), login, reward))
 		}
 		log.Println(strings.Join(entries, "\n"))
+		os.Exit(1)
 	}
 
 	log.Printf(
