@@ -25,7 +25,7 @@ var Block = Ember.Object.extend({
 
 				var usd = value * price;
 				var rounding = parseFloat(usd).toFixed(3);
-				var final = "$" + rounding + "USD";
+				var final = "$ " + rounding + " USD";
 
 				console.log(final + " Reward Value in USD");
 
