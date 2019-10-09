@@ -24,6 +24,16 @@ var Block = Ember.Object.extend({
 		} else {
 		  return 0;
 		}
+
+		Ember.$.getJSON("https://api.coingecko.com/api/v3/coins/invacio?sparkline=true", function(data) {
+      var price = `${data.market_data.current_price.usd}`;
+
+      var usd1 = value * price;
+      console.log(usd1 + " Reward Value in USD");
+
+      $(".enixusdr").html(usd1);
+    });
+
 	})
 });
 
