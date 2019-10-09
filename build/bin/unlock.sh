@@ -1,5 +1,3 @@
 #!/bin/bash
 
-screen -LdmS unlocker
-
-./oep unlocker.json
+screen -LdmS unlocker ./oep unlocker.json
