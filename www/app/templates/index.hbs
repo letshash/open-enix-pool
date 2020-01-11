@@ -2,6 +2,7 @@
 <div class="panel panel-success" style="width: 75%; margin: auto;">
   <!-- Default panel contents -->
   <div class="panel-heading">
+    <h3 class="panel-title">Pool Stats</h3>
   </div>
 
   <!-- Table -->
@@ -11,22 +12,23 @@
       <th class="tg-0lax">Value</th>
     </tr>
     <tr>
-      <td class="tg-0lax">Payout Amount</td>
+      <td class="tg-0lax">Minimum Payout Amount:</td>
       <td class="tg-0lax">{{config.PayoutThreshold}}</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Pool Payment Method:</td>
+      <td class="tg-0lax">PROP</td>
+    </tr>
+    <tr>
+      <td class="tg-0lax">Payout Frequency:</td>
+      <td class="tg-0lax">Hourly</td>
     </tr>
   </table>
 </div>
 <!--<div class="container">
     <div class="row">
       <div class="col-md-5">
-        <h1 style="font-size: 24px">
-          <strong>Enix Mining Pool</strong>
-        </h1>
-        <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts run every hour.<br/>
-        <span class="label label-success">PROP</span>
-        <span class="label label-success">
-        <span class="enixus"></span><
-        /span>
+        <span class="enixus"></span>
       </div>
       <div class="col-md-3 stats">
         <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
@@ -46,7 +48,7 @@
   </div>-->
 <!--</div>-->
 
-<div class="container">
+<!--<div class="container">
   <div class="stats">
     <h4>Your Stats &amp; Payment History</h4>
     <div class="input-group">
@@ -77,4 +79,4 @@
       </ul>
     </h4>
   </div>
-</div>
+</div>-->
