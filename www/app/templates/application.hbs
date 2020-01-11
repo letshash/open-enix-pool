@@ -18,7 +18,7 @@
       </li>
 
       <li class="nav-item">
-        {{#active-li class="nav-item" currentWhen='help'}}
+        {{#active-li currentWhen='help'}}
           <a class="nav-link">
             {{#link-to 'help'}}
               <i class="fa fa-rocket"></i> Help (Coming Soon)
@@ -27,32 +27,48 @@
         {{/active-li}}
       </li>
 
-      {{#active-li class="nav-item" currentWhen='blocks'}}
-        {{#link-to 'blocks'}}
-          <i class="fa fa-cubes"></i> Pending Blocks
-          {{#if immatureTotal}}
-            <span class="badge alert-success">{{immatureTotal}}</span>
-          {{/if}}
-        {{/link-to}}
-      {{/active-li}}
+      <li class="nav-item">
+        {{#active-li currentWhen='blocks'}}
+          <a class="nav-link">
+            {{#link-to 'blocks'}}
+              <i class="fa fa-cubes"></i> Pending Blocks
+              {{#if immatureTotal}}
+                <span class="badge alert-success">{{immatureTotal}}</span>
+              {{/if}}
+            {{/link-to}}
+          </a>
+        {{/active-li}}
+      </li>
 
-      {{#active-li currentWhen='payments'}}
-        {{#link-to 'payments'}}
-          <i class="fa fa-paper-plane-o"></i> Recent Payouts
-        {{/link-to}}
-      {{/active-li}}
+      <li class="nav-item">
+        {{#active-li currentWhen='payments'}}
+          <a class="nav-link">
+            {{#link-to 'payments'}}
+              <i class="fa fa-paper-plane-o"></i> Recent Payouts
+            {{/link-to}}
+          </a>
+        {{/active-li}}
+      </li>
 
-      {{#active-li class="nav-item" currentWhen='miners'}}
-        {{#link-to 'miners'}}
-          <i class="fa fa-users"></i> Miners Online
-        {{/link-to}}
-      {{/active-li}}
+      <li class="nav-item">
+        {{#active-li currentWhen='miners'}}
+          <a class="nav-link">
+            {{#link-to 'miners'}}
+              <i class="fa fa-users"></i> Miners Online
+            {{/link-to}}
+          </a>
+        {{/active-li}}
+      </li>
 
-      {{#active-li class="nav-item" currentWhen='about'}}
-        {{#link-to 'about'}}
-          <i class="fa fa-comments"></i> About Us <span class="badge alert-success">&#x2713;</span>
-        {{/link-to}}
-      {{/active-li}}
+      <li class="nav-item">
+        {{#active-li currentWhen='about'}}
+          <a class="nav-link">
+            {{#link-to 'about'}}
+              <i class="fa fa-comments"></i> About Us <span class="badge alert-success">&#x2713;</span>
+            {{/link-to}}
+          </a>
+        {{/active-li}}
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       {{input value=cachedLogin class="form-control mr-sm-2" placeholder="Enter Your Enix Address"}}
