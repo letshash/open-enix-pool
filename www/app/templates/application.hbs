@@ -7,17 +7,25 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      {{#active-li class="nav-item" currentWhen='index'}}
-        {{#link-to 'index'}}
-          <i class="fa fa-home"></i> Home
-        {{/link-to}}
-      {{/active-li}}
+      <li class="nav-item">
+        {{#active-li currentWhen='index'}}
+          <a class="nav-link">
+            {{#link-to 'index'}}
+              <i class="fa fa-home"></i> Home
+            {{/link-to}}
+          </a>
+        {{/active-li}}
+      </li>
 
-      {{#active-li class="nav-item" currentWhen='help'}}
-        {{#link-to 'help'}}
-          <i class="fa fa-rocket"></i> Help (Coming Soon)
-        {{/link-to}}
-      {{/active-li}}
+      <li class="nav-item">
+        {{#active-li class="nav-item" currentWhen='help'}}
+          <a class="nav-link">
+            {{#link-to 'help'}}
+              <i class="fa fa-rocket"></i> Help (Coming Soon)
+            {{/link-to}}
+          </a>
+        {{/active-li}}
+      </li>
 
       {{#active-li class="nav-item" currentWhen='blocks'}}
         {{#link-to 'blocks'}}
@@ -28,7 +36,7 @@
         {{/link-to}}
       {{/active-li}}
 
-      {{#active-li class="nav-item" currentWhen='payments'}}
+      {{#active-li currentWhen='payments'}}
         {{#link-to 'payments'}}
           <i class="fa fa-paper-plane-o"></i> Recent Payouts
         {{/link-to}}
