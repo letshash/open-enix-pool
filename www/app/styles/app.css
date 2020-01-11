@@ -22,6 +22,15 @@ a:hover {
   text-decoration: underline;
 }
 
+.page-link {
+  display: block;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #343a40;
+  border: 1px solid #dee2e6;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
