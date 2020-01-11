@@ -7,17 +7,19 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      {{#active-li currentWhen='index'}}
+      {{#active-li class="nav-item" currentWhen='index'}}
         {{#link-to 'index'}}
           <i class="fa fa-home"></i> Home
         {{/link-to}}
       {{/active-li}}
-      {{#active-li currentWhen='help'}}
+
+      {{#active-li class="nav-item" currentWhen='help'}}
         {{#link-to 'help'}}
           <i class="fa fa-rocket"></i> Help (Coming Soon)
         {{/link-to}}
       {{/active-li}}
-      {{#active-li currentWhen='blocks'}}
+
+      {{#active-li class="nav-item" currentWhen='blocks'}}
         {{#link-to 'blocks'}}
           <i class="fa fa-cubes"></i> Pending Blocks
           {{#if immatureTotal}}
@@ -25,27 +27,28 @@
           {{/if}}
         {{/link-to}}
       {{/active-li}}
-      {{#active-li currentWhen='payments'}}
+
+      {{#active-li class="nav-item" currentWhen='payments'}}
         {{#link-to 'payments'}}
           <i class="fa fa-paper-plane-o"></i> Recent Payouts
         {{/link-to}}
       {{/active-li}}
-      {{#active-li currentWhen='miners'}}
+
+      {{#active-li class="nav-item" currentWhen='miners'}}
         {{#link-to 'miners'}}
           <i class="fa fa-users"></i> Miners Online
         {{/link-to}}
       {{/active-li}}
-      {{#active-li currentWhen='about'}}
+
+      {{#active-li class="nav-item" currentWhen='about'}}
         {{#link-to 'about'}}
           <i class="fa fa-comments"></i> About Us <span class="badge alert-success">&#x2713;</span>
         {{/link-to}}
       {{/active-li}}
-      <li>
-
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       {{input value=cachedLogin class="form-control" placeholder="Enter Your Enix Address"}}
+      <br>
       <button type="button" class="btn btn-success" {{action 'lookup' cachedLogin}}>Submit</button>
     </form>
   </div>
