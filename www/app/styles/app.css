@@ -201,8 +201,8 @@ h4.note {
 table, th, td {
   border: 0px solid black;
   /*padding-left: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;*/
+  padding-top: 10px;*/
+  padding-bottom: 5px;
 }
 
 .tg {
