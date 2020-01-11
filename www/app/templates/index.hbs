@@ -1,17 +1,22 @@
 <!--<div class="jumbotron">-->
-<div class="panel panel-success">
+<div class="panel panel-success" style="width: 75%;">
   <!-- Default panel contents-->
   <div class="panel-heading">
     <h3 class="panel-title">Pool Stats</h3>
   </div>
-  <div class="panel-body">
-    <h4>Min. payout threshold: {{config.PayoutThreshold}}</h4>
-  </div>
-
-  <!-- Table
-    <table class="table">
-      ...
-    </table>-->
+  <!-- Table -->
+  <table class="table">
+    <table class="tg">
+      <tr>
+        <th class="tg-0lax">Stat</th>
+        <th class="tg-0lax">Value</th>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Payout Amount</td>
+        <td class="tg-0lax">{{config.PayoutThreshold}}</td>
+      </tr>
+    </table>
+  </table>
 </div>
 <!--<div class="container">
     <div class="row">
@@ -21,7 +26,9 @@
         </h1>
         <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>, Payouts run every hour.<br/>
         <span class="label label-success">PROP</span>
-        <span class="label label-success"><span class="enixus"></span></span>
+        <span class="label label-success">
+        <span class="enixus"></span><
+        /span>
       </div>
       <div class="col-md-3 stats">
         <div><i class="fa fa-users"></i> Miners Online: <span id="poolHashrate">{{format-number stats.model.minersTotal}}</span></div>
