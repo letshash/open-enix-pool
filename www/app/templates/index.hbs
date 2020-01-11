@@ -52,6 +52,10 @@
         <td class="tg-0lax">Last Block Found:</td>
         <td class="tg-0lax">{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</td>
       </tr>
+      <tr>
+        <td class="tg-0lax">Current Round Variance:</td>
+        <td class="tg-0lax">{{format-number stats.roundVariance style='percent'}}</td>
+      </tr>
     </table>
   </center>
   <center>
@@ -64,20 +68,16 @@
         <th class="tg-0lax">Value</th>
       </tr>
       <tr>
-        <td class="tg-0lax">Network Difficulty:</td>
-        <td class="tg-0lax">{{with-metric-prefix stats.difficulty}}</td>
-      </tr>
-      <tr>
         <td class="tg-0lax">Network Hash Rate:</td>
         <td class="tg-0lax">{{format-hashrate stats.hashrate}}</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Blockchain Height:</td>
-        <td class="tg-0lax">{{format-number stats.height}}</td>
+        <td class="tg-0lax">Network Difficulty:</td>
+        <td class="tg-0lax">{{with-metric-prefix stats.difficulty}}</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Current Round Variance:</td>
-        <td class="tg-0lax">{{format-number stats.roundVariance style='percent'}}</td>
+        <td class="tg-0lax">Blockchain Height:</td>
+        <td class="tg-0lax">{{format-number stats.height}}</td>
       </tr>
     </table>
   </center>
