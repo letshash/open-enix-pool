@@ -1,6 +1,9 @@
 <div class="jumbotron">
   <div class="container">
-    <div class="row">
+    <div class="panel panel-success">
+      <strong>Min. payout threshold: {{config.PayoutThreshold}}</strong>
+    </div>
+    <!--<div class="row">
       <div class="col-md-5">
         <h1 style="font-size: 24px">
           <strong>Enix Mining Pool</strong>
@@ -23,7 +26,7 @@
         <div><i class="fa fa-bars"></i> Blockchain Height: <span>{{format-number stats.height}}</span></div>
         <div><i class="fa fa-clock-o"></i> Current Round Variance: <span>{{format-number stats.roundVariance style='percent'}}</span></div>
       </div>
-    </div>
+    </div>-->
   </div>
 </div>
 
@@ -40,7 +43,7 @@
     </div>
   </div>
   <div>
-    <hr/>
+    <hr />
     <h4 class="note note-info text-center">
       ClayMore: -wd 1 -r 1 -epool stratum+tcp://enix.arhash.xyz:8002 -ewal (Address) -eworker (Rig Name) -esm 0 -epsw x -allcoins 1 -asm 1
       <br>
