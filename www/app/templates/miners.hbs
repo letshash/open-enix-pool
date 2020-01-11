@@ -2,23 +2,26 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body" style="text-align: center;">
-        <h5 class="card-title" style="text-align: center;">Number of Miners online:</h5>
-        <p class="card-text" style="text-align: center;">{{model.minersTotal}}</p>
+        <h5 class="card-title" style="text-align: center;color:#000;">Number of Miners online:</h5>
+        <p class="card-text" style="text-align: center;color:#000;">{{model.minersTotal}}</p>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title" style="text-align: center;">Total Pool Hashrate:</h5>
-        <p class="card-text" style="text-align: center;">{{format-hashrate model.hashrate}}</p>
+        <h5 class="card-title" style="text-align: center;color:#000;">Total Pool Hashrate:</h5>
+        <p class="card-text" style="text-align: center;color:#000;">{{format-hashrate model.hashrate}}</p>
       </div>
     </div>
   </div>
 </div>
+<br>
 <div class="container">
   {{#if model.miners}}
-    <h4>Miners</h4>
+    <center>
+      <h4>Miners</h4>
+    </center>
     <div class="table-responsive">
       <table class="table table-condensed table-striped">
         <thead>
