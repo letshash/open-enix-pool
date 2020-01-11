@@ -1,5 +1,5 @@
 <!--<div class="jumbotron">-->
-<div class="panel panel-success" style="width: 75%; margin: auto; padding-top: 40px">
+<div class="panel panel-success" style="width: 75%; margin: auto; padding-top: 36px">
   <!-- Default panel contents -->
   <div class="panel-heading">
     <h3 class="panel-title">Pool Information</h3>
@@ -26,6 +26,10 @@
         <td class="tg-0lax">Payout Frequency:</td>
         <td class="tg-0lax">60 Minutes</td>
       </tr>
+      <tr>
+        <td class="tg-0lax">Pool Fee:</td>
+        <td class="tg-0lax">{{config.PoolFee}}</td>
+      </tr>
     </table>
   </center>
   <center>
@@ -38,16 +42,16 @@
         <th class="tg-0lax">Value</th>
       </tr>
       <tr>
-        <td class="tg-0lax">Minimum Payout Amount:</td>
-        <td class="tg-0lax">{{config.PayoutThreshold}}</td>
+        <td class="tg-0lax">Miners Online:</td>
+        <td class="tg-0lax">{{format-number stats.model.minersTotal}}</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Pool Payment Method:</td>
-        <td class="tg-0lax">PROP</td>
+        <td class="tg-0lax">Pool Hash Rate:</td>
+        <td class="tg-0lax">{{format-hashrate stats.model.hashrate}}</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Payout Frequency:</td>
-        <td class="tg-0lax">60 Minutes</td>
+        <td class="tg-0lax">Last Block Found:</td>
+        <td class="tg-0lax">{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</td>
       </tr>
     </table>
   </center>
