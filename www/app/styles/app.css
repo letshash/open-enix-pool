@@ -11,6 +11,15 @@ body {
   background: url('/bg.png');
 }
 
+a {
+  color: #b7b7b7;
+}
+
+a:hover {
+  color: #cc8ca6;
+  text-decoration: underline;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
