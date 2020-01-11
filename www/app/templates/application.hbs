@@ -1,5 +1,57 @@
 <!-- Fixed navbar -->
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Ξnix</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {{#active-li currentWhen='index'}}
+        {{#link-to 'index'}}
+          <i class="fa fa-home"></i> Home
+        {{/link-to}}
+      {{/active-li}}
+      {{#active-li currentWhen='help'}}
+        {{#link-to 'help'}}
+          <i class="fa fa-rocket"></i> Help (Coming Soon)
+        {{/link-to}}
+      {{/active-li}}
+      {{#active-li currentWhen='blocks'}}
+        {{#link-to 'blocks'}}
+          <i class="fa fa-cubes"></i> Pending Blocks
+          {{#if immatureTotal}}
+            <span class="badge alert-success">{{immatureTotal}}</span>
+          {{/if}}
+        {{/link-to}}
+      {{/active-li}}
+      {{#active-li currentWhen='payments'}}
+        {{#link-to 'payments'}}
+          <i class="fa fa-paper-plane-o"></i> Recent Payouts
+        {{/link-to}}
+      {{/active-li}}
+      {{#active-li currentWhen='miners'}}
+        {{#link-to 'miners'}}
+          <i class="fa fa-users"></i> Miners Online
+        {{/link-to}}
+      {{/active-li}}
+      {{#active-li currentWhen='about'}}
+        {{#link-to 'about'}}
+          <i class="fa fa-comments"></i> About Us <span class="badge alert-success">&#x2713;</span>
+        {{/link-to}}
+      {{/active-li}}
+      <li>
+
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      {{input value=cachedLogin class="form-control" placeholder="Enter Your Enix Address"}}
+      <button type="button" class="btn btn-success" {{action 'lookup' cachedLogin}}>Submit</button>
+    </form>
+  </div>
+</nav>
+
+<!--<div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -13,50 +65,9 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        {{#active-li currentWhen='index'}}
-          {{#link-to 'index'}}
-            <i class="fa fa-home"></i> Home
-          {{/link-to}}
-        {{/active-li}}
-        {{#active-li currentWhen='help'}}
-          {{#link-to 'help'}}
-            <i class="fa fa-rocket"></i> Help (Coming Soon)
-          {{/link-to}}
-        {{/active-li}}
-        {{#active-li currentWhen='blocks'}}
-          {{#link-to 'blocks'}}
-            <i class="fa fa-cubes"></i> Pending Blocks
-            {{#if immatureTotal}}
-              <span class="badge alert-success">{{immatureTotal}}</span>
-            {{/if}}
-          {{/link-to}}
-        {{/active-li}}
-        {{#active-li currentWhen='payments'}}
-          {{#link-to 'payments'}}
-            <i class="fa fa-paper-plane-o"></i> Recent Payouts
-          {{/link-to}}
-        {{/active-li}}
-        {{#active-li currentWhen='miners'}}
-          {{#link-to 'miners'}}
-            <i class="fa fa-users"></i> Miners Online
-          {{/link-to}}
-        {{/active-li}}
-        {{#active-li currentWhen='about'}}
-          {{#link-to 'about'}}
-            <i class="fa fa-comments"></i> About Us <span class="badge alert-success">&#x2713;</span>
-          {{/link-to}}
-        {{/active-li}}
-        <li>
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form class="navbar-form navbar-left">
-              {{input value=cachedLogin class="form-control" placeholder="Enter Your Enix Address"}}
-              <button type="button" class="btn btn-success" {{action 'lookup' cachedLogin}}>Submit</button>
-            </form>
-          </div>
-        </li>
-      </ul>
+
     </div>
   </div>
-</div>
+</div>-->
 
 {{outlet}}
