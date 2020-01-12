@@ -21,15 +21,27 @@
             Pool Fee: {{config.PoolFee}}
           </li>
         </ul>
-        <p class="card-text" style="text-align: center;color:#000;"></p>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title" style="text-align: center;color:#000;">Total Pool Hashrate:</h5>
-        <p class="card-text" style="text-align: center;color:#000;">{{format-hashrate model.hashrate}}</p>
+        <h5 class="card-title" style="text-align: center;color:#000;">Pool Stats:</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Num. of Miners Online: {{format-number stats.model.minersTotal}}
+          </li>
+          <li class="list-group-item">
+            Pool Hashrate: {{format-hashrate stats.model.hashrate}}
+          </li>
+          <li class="list-group-item">
+            Time since the last block was found: {{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}
+          </li>
+          <li class="list-group-item">
+            Current Round Variance: {{format-number stats.roundVariance style='percent'}}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -52,67 +64,7 @@
     </div>
   </div>
 </div>
-<!--<div class="panel panel-success" style="width: 75%; margin: auto; padding-top: 30px">
-  <div class="panel-heading">
-    <center>
-      <h3 class="panel-title">Pool Information</h3>
-    </center>
-  </div>
-  <center>
-    <h4> Pool Settings: </h4>
-  </center>
-  <center>
-    <table class="table" style="width: 70%;">
-      <tr>
-        <th class="tg-0lax">Setting</th>
-        <th class="tg-0lax">Value</th>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Minimum Payout Amount:</td>
-        <td class="tg-0lax">{{config.PayoutThreshold}}</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Pool Payment Method:</td>
-        <td class="tg-0lax">PROP</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Payout Frequency:</td>
-        <td class="tg-0lax">60 Minutes</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Pool Fee:</td>
-        <td class="tg-0lax">{{config.PoolFee}}</td>
-      </tr>
-    </table>
-  </center>
-  <center>
-    <h4> Pool Stats: </h4>
-  </center>
-  <center>
-    <table class="table" style="width: 70%;">
-      <tr>
-        <th class="tg-0lax">Stat ID</th>
-        <th class="tg-0lax">Value</th>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Num. of Miners Online:</td>
-        <td class="tg-0lax">{{format-number stats.model.minersTotal}}</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Pool Hash Rate:</td>
-        <td class="tg-0lax">{{format-hashrate stats.model.hashrate}}</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Last Block Found:</td>
-        <td class="tg-0lax">{{format-relative (seconds-to-ms stats.model.stats.lastBlockFound)}}</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Current Round Variance:</td>
-        <td class="tg-0lax">{{format-number stats.roundVariance style='percent'}}</td>
-      </tr>
-    </table>
-  </center>
-  <center>
+<!--
     <h4> Network Stats: </h4>
   </center>
   <center>
