@@ -1,4 +1,43 @@
-<div class="panel panel-success" style="width: 75%; margin: auto; padding-top: 30px">
+<center>
+  <h3 class="panel-title">Pool Information</h3>
+</center>
+<div class="row" style="margin: auto; padding-top: 30px">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body" style="text-align: center;">
+        <h5 class="card-title" style="text-align: center;color:#000;">Number of Miners online:</h5>
+        <p class="card-text" style="text-align: center;color:#000;">{{model.minersTotal}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;color:#000;">Total Pool Hashrate:</h5>
+        <p class="card-text" style="text-align: center;color:#000;">{{format-hashrate model.hashrate}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row" style="margin: auto; padding-top: 30px">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body" style="text-align: center;">
+        <h5 class="card-title" style="text-align: center;color:#000;">Number of Miners online:</h5>
+        <p class="card-text" style="text-align: center;color:#000;">{{model.minersTotal}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" style="text-align: center;color:#000;">Total Pool Hashrate:</h5>
+        <p class="card-text" style="text-align: center;color:#000;">{{format-hashrate model.hashrate}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="panel panel-success" style="width: 75%; margin: auto; padding-top: 30px">
   <div class="panel-heading">
     <center>
       <h3 class="panel-title">Pool Information</h3>
@@ -124,5 +163,5 @@
       <li style="color:#000;">Phoenix Miner: -coin eth -pool enix.arhash.xyz:8002 -wal (Address) -rmode 2 -worker (Rig Name)</li>
     </ol>
   </center>
-</div>
+</div>-->
 <!--<span class="enixus"></span>-->
