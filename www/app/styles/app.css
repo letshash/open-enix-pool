@@ -17,7 +17,7 @@ body {
   position: relative;
   display: block;
   padding: .75rem 1.25rem;
-  background-color: #000;
+  color: #000;
   border: 1px solid rgba(0, 0, 0, .125);
 }
 
