@@ -26,7 +26,7 @@
   </div>
   <div class="col-sm-6">
     <div class="card">
-      <div class="card-body">
+      <div class="card-body" style="text-align: center;">
         <h5 class="card-title" style="text-align: center;color:#000;">Pool Stats:</h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">
@@ -50,43 +50,59 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body" style="text-align: center;">
-        <h5 class="card-title" style="text-align: center;color:#000;">Number of Miners online:</h5>
-        <p class="card-text" style="text-align: center;color:#000;">{{model.minersTotal}}</p>
+        <h5 class="card-title" style="text-align: center;color:#000;">Network Stats:</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Network Hash Rate:: {{format-hashrate stats.hashrate}}
+          </li>
+          <li class="list-group-item">
+            Network Difficulty: {{with-metric-prefix stats.difficulty}}
+          </li>
+          <li class="list-group-item">
+            Blockchain Height: {{format-number stats.height}}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="col-sm-6">
     <div class="card">
-      <div class="card-body">
-        <h5 class="card-title" style="text-align: center;color:#000;">Total Pool Hashrate:</h5>
-        <p class="card-text" style="text-align: center;color:#000;">{{format-hashrate model.hashrate}}</p>
+      <div class="card-body" style="text-align: center;">
+        <h5 class="card-title" style="text-align: center;color:#000;">Available Ports:</h5>
+        <center>
+          <table class="table" style="width: 70%;">
+            <tr>
+              <th class="tg-0lax">Difficulty</th>
+              <th class="tg-0lax">Stratum Port</th>
+              <th class="tg-0lax">Proxy Port</th>
+            </tr>
+            <tr>
+              <td class="tg-0lax">2 Billion</td>
+              <td class="tg-0lax">8002</td>
+              <td class="tg-0lax">8802</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">4 Billion</td>
+              <td class="tg-0lax">8004</td>
+              <td class="tg-0lax">8804</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">9 Billion</td>
+              <td class="tg-0lax">8009</td>
+              <td class="tg-0lax">8809</td>
+            </tr>
+            <tr>
+              <td class="tg-0lax">12 Billion</td>
+              <td class="tg-0lax">8012</td>
+              <td class="tg-0lax">8812</td>
+            </tr>
+          </table>
+        </center>
       </div>
     </div>
   </div>
 </div>
 <!--
-    <h4> Network Stats: </h4>
-  </center>
-  <center>
-    <table class="table" style="width: 70%;">
-      <tr>
-        <th class="tg-0lax">Stat ID</th>
-        <th class="tg-0lax">Value</th>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Network Hash Rate:</td>
-        <td class="tg-0lax">{{format-hashrate stats.hashrate}}</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Network Difficulty:</td>
-        <td class="tg-0lax">{{with-metric-prefix stats.difficulty}}</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Blockchain Height:</td>
-        <td class="tg-0lax">{{format-number stats.height}}</td>
-      </tr>
-    </table>
-  </center>
   <center>
     <h4> Available Ports: </h4>
   </center>
