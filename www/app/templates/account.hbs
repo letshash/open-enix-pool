@@ -15,11 +15,9 @@
           <li class="list-group-item">
             Pending Balance: {{format-balance model.stats.balance}}
           </li>
-          {{#if model.stats.pending}}
-            <li class="list-group-item">
-              Previous Payment: {{format-balance model.stats.pending}}
-            </li>
-          {{/if}}
+          <li class="list-group-item">
+            Previous Payment: {{format-balance model.stats.pending}}
+          </li>
           <li class="list-group-item">
             Total Paid: {{format-balance model.stats.paid}}
           </li>
