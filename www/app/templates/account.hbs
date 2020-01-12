@@ -1,44 +1,73 @@
 {{outlet 'error' }}
-<div class="jumbotron">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 stats">
-        <div style="display: block;">
-          <i class="fa fa-cloud"></i> Immature Balance: <span>{{format-balance model.stats.immature}}</span><br>
-          <small>Preliminary balance awaiting blocks to mature.</small>
-        </div>
-        <div style="display: block;">
-          <i class="fa fa-bank"></i> Pending Balance: <span>{{format-balance model.stats.balance}}</span><br>
-          <small>Credited coins awaiting payout.</small>
-        </div>
-        {{#if model.stats.pending}}
-          <div style="display: block;">
-            <i class="fa fa-clock-o"></i> Previous Payment: <span>{{format-balance model.stats.pending}}</span><br>
-          </div>
-        {{/if}}
-        <div style="display: block;"><i class="fa fa-money"></i> Total Paid: <span>{{format-balance model.stats.paid}}</span></div>
+<br>
+<center>
+  <h3 class="panel-title">Miner Information</h3>
+</center>
+<div class="row" style="margin: auto; padding-top: 30px">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body" style="text-align: center;">
+        <h5 class="card-title" style="text-align: center;color:#000;">Payments & Balances:</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Immature Balance: {{format-balance model.stats.immature}}
+          </li>
+          <li class="list-group-item">
+            Pending Balance: {{format-balance model.stats.balance}}
+          </li>
+          {{#if model.stats.pending}}
+            <li class="list-group-item">
+              Previous Payment: {{format-balance model.stats.pending}}
+            </li>
+          {{/if}}
+          <li class="list-group-item">
+            Total Paid: {{format-balance model.stats.paid}}
+          </li>
+        </ul>
       </div>
-      <div class="col-md-4 stats">
-        {{#if model.stats.lastShare}}
-          <div style="display: block;"><i class="fa fa-clock-o"></i>
-            Last Share Submitted: <span>{{format-relative (seconds-to-ms (string-to-int model.stats.lastShare))}}</span>
-          </div>
-        {{/if}}
-        <div style="display: block;"><i class="fa fa-gears"></i> Workers Online: <span>{{format-number model.workersOnline}}</span></div>
-        <div style="display: block;"><i class="fa fa-tachometer"></i> Hashrate (30m): <span>{{format-hashrate model.currentHashrate}}</span></div>
-        <div style="display: block;"><i class="fa fa-tachometer"></i> Hashrate (3h): <span>{{format-hashrate model.hashrate}}</span></div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body" style="text-align: center;">
+        <h5 class="card-title" style="text-align: center;color:#000;">Pool Stats:</h5>
+        <ul class="list-group list-group-flush">
+          {{#if model.stats.lastShare}}
+            <li class="list-group-item">
+              Last Share Submitted: {{format-relative (seconds-to-ms (string-to-int model.stats.lastShare))}}
+            </li>
+          {{/if}}
+          <li class="list-group-item">
+            Workers Online: {{format-number model.workersOnline}}
+          </li>
+          <li class="list-group-item">
+            Hashrate (30m): {{format-hashrate model.currentHashrate}}
+          </li>
+          <li class="list-group-item">
+            Hashrate (3h): {{format-hashrate model.hashrate}}
+          </li>
+        </ul>
       </div>
-      <div class="col-md-4 stats">
-        <div style="display: block;"><i class="fa fa-tachometer"></i> Blocks Found: <span>{{format-number model.stats.blocksFound fallback='0'}}</span></div>
-        <div style="display: block;"><i class="fa fa-paper-plane-o"></i> Total Payments: <span>{{format-number model.paymentsTotal}}</span> <span class="enixusd"></span></div>
-        <div style="display: block;">
-          <i class="fa fa-gears"></i> Your Round Share: <span>{{format-number roundPercent style='percent' maximumFractionDigits='6'}}</span><br />
-          <small>This is your percentage of contribution to current round.</small>
-        </div>
-        <div style="display: block;">
-          <i class="fa fa-clock-o"></i>
-          Epoch Switch: <span>{{format-relative applicationController.nextEpoch units="hour"}}</span>
-        </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body" style="text-align: center;">
+        <h5 class="card-title" style="text-align: center;color:#000;">Pool Stats:</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Blocks Found: {{format-number model.stats.blocksFound fallback='0'}}
+          </li>
+          <li class="list-group-item">
+            Total Payments: {{format-number model.paymentsTotal}}
+          </li>
+          <li class="list-group-item">
+            Your Round Share: {{format-number roundPercent style='percent' maximumFractionDigits='6'}}
+          </li>
+          <li class="list-group-item">
+            Epoch Switch: {{format-relative applicationController.nextEpoch units="hour"}}
+          </li>
+        </ul>
       </div>
     </div>
   </div>
