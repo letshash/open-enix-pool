@@ -1,3 +1,4 @@
+<br>
 <center>
   <h3 class="panel-title">Pool Information</h3>
 </center>
@@ -5,8 +6,22 @@
   <div class="col-sm-6">
     <div class="card">
       <div class="card-body" style="text-align: center;">
-        <h5 class="card-title" style="text-align: center;color:#000;">Number of Miners online:</h5>
-        <p class="card-text" style="text-align: center;color:#000;">{{model.minersTotal}}</p>
+        <h5 class="card-title" style="text-align: center;color:#000;">Pool Settings:</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Minimum Payout Amount: {{config.PayoutThreshold}}
+          </li>
+          <li class="list-group-item">
+            Pool Payment Method:: PROP
+          </li>
+          <li class="list-group-item">
+            Payout Frequency: 60 Minutes
+          </li>
+          <li class="list-group-item">
+            Pool Fee: {{config.PoolFee}}
+          </li>
+        </ul>
+        <p class="card-text" style="text-align: center;color:#000;"></p>
       </div>
     </div>
   </div>
